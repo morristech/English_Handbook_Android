@@ -7,12 +7,76 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.zhukovartemvl.englishhandbook.HomeFragment"
+        android:name="com.zhukovartemvl.englishhandbook.ui.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/toDictionaryFragment"
+            app:destination="@id/dictionaryFragment" />
+        <action
+            android:id="@+id/toVerbsFragment"
+            app:destination="@id/verbsFragment" />
+        <action
+            android:id="@+id/toLinksFragment"
+            app:destination="@id/linksFragment" />
+        <action
+            android:id="@+id/toArticleFragment"
+            app:destination="@id/articleFragment" />
+        <action
+            android:id="@+id/toAboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="com.zhukovartemvl.englishhandbook.AboutFragment"
+        android:name="com.zhukovartemvl.englishhandbook.ui.about.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.zhukovartemvl.englishhandbook.ui.article.ArticleFragment"
+        android:label="fragment_article"
+        tools:layout="@layout/fragment_article" >
+        <argument
+            android:name="key"
+            app:argType="string" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/dictionaryFragment"
+        android:name="com.zhukovartemvl.englishhandbook.ui.dictionary.DictionaryFragment"
+        android:label="fragment_dictionary"
+        tools:layout="@layout/fragment_dictionary" >
+        <argument
+            android:name="key"
+            app:argType="string" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/verbsFragment"
+        android:name="com.zhukovartemvl.englishhandbook.ui.verbs.VerbsFragment"
+        android:label="fragment_verbs"
+        tools:layout="@layout/fragment_verbs" >
+        <argument
+            android:name="key"
+            app:argType="string" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/linksFragment"
+        android:name="com.zhukovartemvl.englishhandbook.ui.links.LinksFragment"
+        android:label="fragment_links"
+        tools:layout="@layout/fragment_links" >
+        <argument
+            android:name="key"
+            app:argType="string" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
 </navigation>

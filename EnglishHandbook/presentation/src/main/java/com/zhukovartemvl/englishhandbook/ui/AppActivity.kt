@@ -1,14 +1,15 @@
-package com.zhukovartemvl.englishhandbook
+package com.zhukovartemvl.englishhandbook.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.zhukovartemvl.englishhandbook.R
 
 
-class MainActivity : AppCompatActivity() {
+class AppActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_app)
     }
 
 }

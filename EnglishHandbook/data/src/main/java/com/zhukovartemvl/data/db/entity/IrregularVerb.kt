@@ -1,4 +1,4 @@
-package com.zhukovartemvl.data.entity
+package com.zhukovartemvl.data.db.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

@@ -1,6 +1,20 @@
 <resources>
     <string name="app_name">English Handbook</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="bug_report">Сообщить об ошибке</string>
+    <string name="share">Поделиться приложением</string>
+    <string name="rate">Оценить приложение</string>
+    <string name="about">О приложении</string>
+    <string name="update">Обновить</string>
+    <string name="version">Версия</string>
+
+
+    <string name="database_update">Обновление базы данных</string>
+    <string name="database_no_upgrade">Обновление базы данных не требуется</string>
+    <string name="database_updated">База данных обновлена</string>
+
 </resources>
