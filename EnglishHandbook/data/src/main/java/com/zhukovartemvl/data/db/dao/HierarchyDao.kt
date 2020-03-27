@@ -7,6 +7,6 @@ import com.zhukovartemvl.data.db.entity.HierarchyItem
 
 @Dao
 interface HierarchyDao {
-    @Query("SELECT * FROM hierarchy WHERE [parent_id] = :parentId")
+    @Query("SELECT * FROM hierarchy WHERE parent_id = :parentId")
     fun getAllChildren(parentId: Int): List<HierarchyItem>
 }

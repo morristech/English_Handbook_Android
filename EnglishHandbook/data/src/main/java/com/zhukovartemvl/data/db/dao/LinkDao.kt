@@ -7,6 +7,6 @@ import com.zhukovartemvl.data.db.entity.Link
 
 @Dao
 interface LinkDao {
-    @Query("SELECT * FROM links WHERE [key_id] = :key")
+    @Query("SELECT * FROM links WHERE key_id = :key")
     fun getByKey(key: String): List<Link>
 }

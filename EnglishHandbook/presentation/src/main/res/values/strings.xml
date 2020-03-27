@@ -1,6 +1,28 @@
 <resources>
     <string name="app_name">English Handbook</string>
 
+    <string name="database_zip_name" translatable="false">data.zip</string>
+    <string name="database_name" translatable="false">data.db</string>
+    <string name="database_link" translatable="false"> </string>
+    <string name="database_version_link" translatable="false"> </string>
+
+
+    <!--!!!!!!!!!!!!!!!!!TEST!!!!!!!!!!!!!!!!!-->
+    <string name="ad_banner_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="ad_interstitial_unit_id" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
+
+    <!--Release-->
+    <!--    <string name="ad_banner_unit_id" translatable="false"> </string>-->
+    <!--    <string name="ad_interstitial_unit_id" translatable="false"> </string>-->
+
+    <!--Links-->
+    <string name="app_link" translatable="false">https://play.google.com/store/apps/details?id=com.zhukovartemvl.luckydays</string>
+    <string name="email" translatable="false"><u>zhukovartemvl@gmail.com</u></string>
+
+    <string name="database_version">Версия базы данных</string>
+
+    <string name="feedback">Обратная связь: </string>
+    <string name="review"><u>Оставить отзыв</u></string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

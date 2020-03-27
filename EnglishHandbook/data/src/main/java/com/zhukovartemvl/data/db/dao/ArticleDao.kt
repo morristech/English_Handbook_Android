@@ -7,6 +7,6 @@ import com.zhukovartemvl.data.db.entity.Article
 
 @Dao
 interface ArticleDao {
-    @Query("SELECT * FROM articles WHERE [key_id] = :key")
+    @Query("SELECT * FROM articles WHERE key_id = :key")
     fun getByKey(key: String): List<Article>
 }

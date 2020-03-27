@@ -3,11 +3,12 @@ package com.zhukovartemvl.data.db
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.zhukovartemvl.data.db.dao.*
+import com.zhukovartemvl.data.db.entity.*
 
 
 @Database(
-    entities = [ArticleDao::class, DatabaseParametersDao::class,
-        DictionaryDao::class, HierarchyDao::class, LinkDao::class, VerbDao::class],
+    entities = [Article::class, DatabaseParameters::class,
+        DictionaryItem::class, HierarchyItem::class, Link::class, IrregularVerb::class],
     version = 1,
     exportSchema = false
 )

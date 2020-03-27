@@ -7,7 +7,7 @@ import com.zhukovartemvl.data.db.entity.IrregularVerb
 
 @Dao
 interface VerbDao {
-    @Query("SELECT * FROM irregular_verbs WHERE [key_id] = :key")
+    @Query("SELECT * FROM irregular_verbs WHERE key_id = :key")
     fun getByKey(key: String): List<IrregularVerb>
 
     @Query("SELECT * FROM irregular_verbs")

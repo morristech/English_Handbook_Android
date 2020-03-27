@@ -7,6 +7,6 @@ import com.zhukovartemvl.data.db.entity.DictionaryItem
 
 @Dao
 interface DictionaryDao {
-    @Query("SELECT * FROM dictionary WHERE [key_id] = :key")
+    @Query("SELECT * FROM dictionary WHERE key_id = :key")
     fun getByKey(key: String): List<DictionaryItem>
 }
