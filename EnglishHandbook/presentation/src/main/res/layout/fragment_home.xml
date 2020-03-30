@@ -13,6 +13,6 @@
         android:clickable="true"
         android:focusable="true"
         app:layoutManager="LinearLayoutManager"
-        tools:listitem="@layout/item_category"/>
+        tools:listitem="@layout/item_hierarchy"/>
 
 </FrameLayout>
