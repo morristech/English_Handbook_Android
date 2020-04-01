@@ -38,5 +38,8 @@
     <string name="database_update">Обновление базы данных</string>
     <string name="database_no_upgrade">Обновление базы данных не требуется</string>
     <string name="database_updated">База данных обновлена</string>
+    <string name="title_feature">home</string>
+    <string name="title_home">Home</string>
+    <string name="title_about">About</string>
 
 </resources>

@@ -1,2 +1,4 @@
 include ':presentation', ':domain', ':data'
 rootProject.name='English Handbook'
+include ':home'
+include ':about'
