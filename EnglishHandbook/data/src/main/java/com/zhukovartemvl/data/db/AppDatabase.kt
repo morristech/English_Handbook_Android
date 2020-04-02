@@ -7,8 +7,8 @@ import com.zhukovartemvl.data.db.entity.*
 
 
 @Database(
-    entities = [Article::class, DatabaseParameters::class,
-        DictionaryItem::class, HierarchyItem::class, Link::class, IrregularVerb::class],
+    entities = [Article::class, DatabaseParametersEntity::class,
+        DictionaryEntity::class, HierarchyEntity::class, LinkEntity::class, IrregularVerbEntity::class],
     version = 1,
     exportSchema = false
 )

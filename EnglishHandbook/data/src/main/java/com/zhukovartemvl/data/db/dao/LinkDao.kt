@@ -2,11 +2,11 @@ package com.zhukovartemvl.data.db.dao
 
 import androidx.room.Dao
 import androidx.room.Query
-import com.zhukovartemvl.data.db.entity.Link
+import com.zhukovartemvl.data.db.entity.LinkEntity
 
 
 @Dao
 interface LinkDao {
     @Query("SELECT * FROM links WHERE key_id = :key")
-    fun getByKey(key: String): List<Link>
+    fun getByKey(key: String): List<LinkEntity>
 }
