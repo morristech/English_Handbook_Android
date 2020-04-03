@@ -1,31 +1,36 @@
 package com.zhukovartemvl.home.adapter
 
 import android.graphics.Typeface
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
-import com.zhukovartemvl.domain.model.*
-import com.zhukovartemvl.englishhandbook.R
+import com.zhukovartemvl.home.R
+import com.zhukovartemvl.shared.model.*
 import com.zhukovartemvl.ui.base.BaseAdapter
 import com.zhukovartemvl.ui.base.BaseAdapterCallback
 import com.zhukovartemvl.ui.base.BaseViewHolder
 
 
-class HierarchyAdapter : com.zhukovartemvl.ui.base.BaseAdapter<Category>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): com.zhukovartemvl.ui.base.BaseViewHolder<Category> {
-        TODO("Not yet implemented")
+class HierarchyAdapter : BaseAdapter<Category>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<Category> {
+        return ViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.item_category, parent, false),
+            callback = mCallback
+        )
     }
 
-    class ViewHolder(itemView: View, var callback: com.zhukovartemvl.ui.base.BaseAdapterCallback<Category>?) :
-        com.zhukovartemvl.ui.base.BaseViewHolder<Category>(itemView = itemView) {
+    class ViewHolder(itemView: View, var callback: BaseAdapterCallback<Category>?) :
+        BaseViewHolder<Category>(itemView = itemView) {
 
         private val background: ConstraintLayout = itemView.findViewById(R.id.item_background)
         private val txtTitle: TextView = itemView.findViewById(R.id.txt_title)
         private val imgDot: ImageView = itemView.findViewById(R.id.img_dot)
-        private val imgIcon: ImageView = itemView.findViewById(R.id.img_folder)
+        private val imgFolder: ImageView = itemView.findViewById(R.id.img_folder)
         private val imgArrow: ImageView = itemView.findViewById(R.id.img_arrow)
 
         override fun bind(model: Category) {
@@ -36,9 +41,9 @@ class HierarchyAdapter : com.zhukovartemvl.ui.base.BaseAdapter<Category>() {
                     txtTitle.setText(model.title)
                     imgDot.visibility = View.GONE
                     imgArrow.visibility = View.GONE
-                    imgIcon.setImageResource(R.drawable.ic_back)
+                    imgFolder.setImageResource(R.drawable.ic_back)
                 }
-                is HeaderItem -> {
+                is Header -> {
                     val backgroundColor = ContextCompat.getColor(itemView.context, R.color.header)
                     background.setBackgroundColor(backgroundColor)
                     txtTitle.setText(model.title)
@@ -46,16 +51,23 @@ class HierarchyAdapter : com.zhukovartemvl.ui.base.BaseAdapter<Category>() {
                     imgDot.visibility = View.GONE
                     imgArrow.visibility = View.GONE
                 }
-                is FolderItem -> {
-                    val textColor = ContextCompat.getColor(itemView.context, R.color.categoryTitle)
-                    txtTitle.setTextColor(textColor)
+                is Title -> {
+                    val backgroundColor = ContextCompat.getColor(itemView.context, R.color.header)
+                    background.setBackgroundColor(backgroundColor)
                     txtTitle.setText(model.title)
-                    imgIcon.setImageResource(model.icon)
+                    imgDot.visibility = View.GONE
+                    imgArrow.visibility = View.GONE
                 }
-                is FileItem -> {
+                is Folder -> {
                     val textColor = ContextCompat.getColor(itemView.context, R.color.categoryTitle)
                     txtTitle.setTextColor(textColor)
                     txtTitle.setText(model.title)
+                }
+                else -> {
+                    val textColor = ContextCompat.getColor(itemView.context, R.color.categoryTitle)
+                    txtTitle.setTextColor(textColor)
+                    txtTitle.setText(model.title)
+                    imgArrow.visibility = View.GONE
                 }
             }
         }

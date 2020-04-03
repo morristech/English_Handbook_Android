@@ -30,10 +30,21 @@ android {
     }
 
 
-    dynamicFeatures = [":feature:home", ":feature:about", ":feature:article", ":feature:dictionary", ":feature:links", ":feature:verbs"]
+//    dynamicFeatures = [":feature:home", ":feature:about", ":feature:article", ":feature:dictionary", ":feature:links", ":feature:verbs"]
 }
 
 dependencies {
+
+
+
     implementation project(':shared:libraries')
+    implementation project(path: ':feature:about')
+    implementation project(path: ':feature:dictionary')
+    implementation project(path: ':feature:home')
+    implementation project(path: ':feature:verbs')
+    implementation project(path: ':feature:links')
+    implementation project(path: ':feature:article')
+    implementation project(path: ':domain')
+
 
 }
