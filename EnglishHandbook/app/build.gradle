@@ -30,7 +30,7 @@ android {
     }
 
 
-//    dynamicFeatures = [":feature:home", ":feature:about", ":feature:article", ":feature:dictionary", ":feature:links", ":feature:verbs"]
+   // dynamicFeatures = [":feature:home", ":feature:about", ":feature:article", ":feature:dictionary", ":feature:links", ":feature:verbs"]
 }
 
 dependencies {
