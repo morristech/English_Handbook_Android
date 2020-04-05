@@ -22,29 +22,71 @@ android {
             enabled = true
         }
     }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    bundle {
+        density {
+            enableSplit true // Different APKs are generated for devices with different screen densities; true by default.
+        }
+        abi {
+            enableSplit true // Different APKs are generated for devices with different CPU architectures; true by default.
+        }
+        language {
+            enableSplit false // This is disabled so that the App Bundle does NOT split the APK for each language.
+        }
+    }
+
     buildTypes {
+        debug {
+//            minifyEnabled = true
+//            shrinkResources = true
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
         release {
-            minifyEnabled false
+            minifyEnabled = true
+            shrinkResources = true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 
-   // dynamicFeatures = [":feature:home", ":feature:about", ":feature:article", ":feature:dictionary", ":feature:links", ":feature:verbs"]
+    sourceSets {
+        main {
+            java.srcDirs += "src/main/kotlin"
+        }
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
 }
 
 dependencies {
 
-
-
     implementation project(':shared:libraries')
-    implementation project(path: ':feature:about')
-    implementation project(path: ':feature:dictionary')
-    implementation project(path: ':feature:home')
-    implementation project(path: ':feature:verbs')
-    implementation project(path: ':feature:links')
-    implementation project(path: ':feature:article')
-    implementation project(path: ':domain')
+    implementation project(':feature:about')
+    implementation project(':feature:dictionary')
+    implementation project(':feature:home')
+    implementation project(':feature:verbs')
+    implementation project(':feature:links')
+    implementation project(':feature:article')
+    implementation project(':domain')
 
+    implementation "androidx.multidex:multidex:2.0.1"
+
+    implementation 'com.google.firebase:firebase-core:17.3.0'
+    implementation 'com.google.firebase:firebase-analytics:17.3.0'
+    implementation 'com.google.firebase:firebase-ads:19.0.1'
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
 
 }

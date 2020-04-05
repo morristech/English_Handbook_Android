@@ -7,7 +7,7 @@ import com.zhukovartemvl.data.db.entity.*
 
 
 @Database(
-    entities = [Article::class, DatabaseParametersEntity::class,
+    entities = [ArticleEntity::class, DatabaseParametersEntity::class,
         DictionaryEntity::class, HierarchyEntity::class, LinkEntity::class, IrregularVerbEntity::class],
     version = 1,
     exportSchema = false

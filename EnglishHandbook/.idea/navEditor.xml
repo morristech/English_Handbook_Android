@@ -41,15 +41,6 @@
                             <option name="y" value="-888" />
                           </Point>
                         </option>
-                        <option name="myPositions">
-                          <map>
-                            <entry key="action_dictionaryFragment_to_aboutFragment">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                          </map>
-                        </option>
                       </LayoutPositions>
                     </value>
                   </entry>
@@ -58,33 +49,33 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-488" />
+                            <option name="x" value="-490" />
                             <option name="y" value="-697" />
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_homeFragment_to_aboutFragment">
+                            <entry key="toAboutFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
                             </entry>
-                            <entry key="action_homeFragment_to_articleFragment">
+                            <entry key="toArticleFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
                             </entry>
-                            <entry key="action_homeFragment_to_dictionaryFragment">
+                            <entry key="toDictionaryFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
                             </entry>
-                            <entry key="action_homeFragment_to_linksFragment">
+                            <entry key="toLinksFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
                             </entry>
-                            <entry key="action_homeFragment_to_verbsFragment">
+                            <entry key="toVerbsFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -102,15 +93,6 @@
                             <option name="x" value="55" />
                             <option name="y" value="-887" />
                           </Point>
-                        </option>
-                        <option name="myPositions">
-                          <map>
-                            <entry key="action_linksFragment_to_aboutFragment">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                          </map>
                         </option>
                       </LayoutPositions>
                     </value>

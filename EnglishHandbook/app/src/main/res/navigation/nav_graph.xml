@@ -28,12 +28,12 @@
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="com.zhukovartemvl.englishhandbook.ui.about.AboutFragment"
+        android:name="com.zhukovartemvl.about.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/articleFragment"
-        android:name="com.zhukovartemvl.englishhandbook.ui.article.ArticleFragment"
+        android:name="com.zhukovartemvl.article.ArticleFragment"
         android:label="fragment_article"
         tools:layout="@layout/fragment_article" >
         <argument
@@ -45,7 +45,7 @@
     </fragment>
     <fragment
         android:id="@+id/dictionaryFragment"
-        android:name="com.zhukovartemvl.englishhandbook.ui.dictionary.DictionaryFragment"
+        android:name="com.zhukovartemvl.dictionary.DictionaryFragment"
         android:label="fragment_dictionary"
         tools:layout="@layout/fragment_dictionary" >
         <argument
@@ -57,7 +57,7 @@
     </fragment>
     <fragment
         android:id="@+id/verbsFragment"
-        android:name="com.zhukovartemvl.englishhandbook.ui.verbs.VerbsFragment"
+        android:name="com.zhukovartemvl.verbs.VerbsFragment"
         android:label="fragment_verbs"
         tools:layout="@layout/fragment_verbs" >
         <argument
@@ -69,7 +69,7 @@
     </fragment>
     <fragment
         android:id="@+id/linksFragment"
-        android:name="com.zhukovartemvl.englishhandbook.ui.links.LinksFragment"
+        android:name="com.zhukovartemvl.links.LinksFragment"
         android:label="fragment_links"
         tools:layout="@layout/fragment_links" >
         <argument
