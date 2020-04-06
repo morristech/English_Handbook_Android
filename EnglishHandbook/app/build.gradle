@@ -16,8 +16,6 @@ android {
         versionCode project.version_code
         versionName project.version_name
 
-        multiDexEnabled true
-
         dataBinding {
             enabled = true
         }
@@ -77,12 +75,12 @@ dependencies {
     implementation project(':feature:about')
     implementation project(':feature:dictionary')
     implementation project(':feature:home')
+    implementation project(':feature:test')
     implementation project(':feature:verbs')
     implementation project(':feature:links')
     implementation project(':feature:article')
     implementation project(':domain')
 
-    implementation "androidx.multidex:multidex:2.0.1"
 
     implementation 'com.google.firebase:firebase-core:17.3.0'
     implementation 'com.google.firebase:firebase-analytics:17.3.0'

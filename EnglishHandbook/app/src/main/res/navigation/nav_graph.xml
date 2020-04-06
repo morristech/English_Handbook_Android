@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.zhukovartemvl.home.HomeFragment"
+        android:name="com.zhukovartemvl.englishhandbook.test.TestFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_test" >
         <action
             android:id="@+id/toDictionaryFragment"
             app:destination="@id/dictionaryFragment" />

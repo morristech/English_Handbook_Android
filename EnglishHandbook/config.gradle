@@ -6,12 +6,18 @@ subprojects {
                 defaultConfig {
                     minSdkVersion versions.minSdkVersion
                     targetSdkVersion versions.targetSdkVersion
+
+                    multiDexEnabled true
+
                 }
+
             }
 
             dependencies {
                 implementation fileTree(dir: 'libs', include: ['*.jar'])
                 implementation deps.kotlin
+
+                implementation "androidx.multidex:multidex:2.0.1"
             }
         }
     }

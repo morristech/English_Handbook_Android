@@ -1,4 +1,4 @@
-package com.zhukovartemvl.home.adapter
+package com.zhukovartemvl.englishhandbook.home.adapter
 
 import android.graphics.Typeface
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
-import com.zhukovartemvl.home.R
+import com.zhukovartemvl.englishhandbook.home.R
 import com.zhukovartemvl.shared.model.*
 import com.zhukovartemvl.ui.base.BaseAdapter
 import com.zhukovartemvl.ui.base.BaseAdapterCallback
@@ -36,37 +36,37 @@ class HierarchyAdapter : BaseAdapter<Category>() {
         override fun bind(model: Category) {
             when (model) {
                 is BackItem -> {
-                    val textColor = ContextCompat.getColor(itemView.context, R.color.categoryTitle)
-                    txtTitle.setTextColor(textColor)
+//                    val textColor = ContextCompat.getColor(itemView.context, R.color.categoryTitle)
+//                    txtTitle.setTextColor(textColor)
                     txtTitle.setText(model.title)
                     imgDot.visibility = View.GONE
                     imgArrow.visibility = View.GONE
-                    imgFolder.setImageResource(R.drawable.ic_back)
+//                    imgFolder.setImageResource(R.drawable.ic_back)
                 }
                 is Header -> {
-                    val backgroundColor = ContextCompat.getColor(itemView.context, R.color.header)
-                    background.setBackgroundColor(backgroundColor)
+//                    val backgroundColor = ContextCompat.getColor(itemView.context, R.color.header)
+//                    background.setBackgroundColor(backgroundColor)
                     txtTitle.setText(model.title)
                     txtTitle.setTypeface(null, Typeface.BOLD)
                     imgDot.visibility = View.GONE
                     imgArrow.visibility = View.GONE
                 }
                 is Title -> {
-                    val backgroundColor = ContextCompat.getColor(itemView.context, R.color.header)
-                    background.setBackgroundColor(backgroundColor)
+//                    val backgroundColor = ContextCompat.getColor(itemView.context, R.color.header)
+//                    background.setBackgroundColor(backgroundColor)
                     txtTitle.setText(model.title)
                     imgDot.visibility = View.GONE
                     imgArrow.visibility = View.GONE
                 }
                 is Folder -> {
-                    val textColor = ContextCompat.getColor(itemView.context, R.color.categoryTitle)
-                    txtTitle.setTextColor(textColor)
+//                    val textColor = ContextCompat.getColor(itemView.context, R.color.categoryTitle)
+//                    txtTitle.setTextColor(textColor)
                     txtTitle.setText(model.title)
                 }
                 else -> {
-                    val textColor = ContextCompat.getColor(itemView.context, R.color.categoryTitle)
-                    txtTitle.setTextColor(textColor)
-                    txtTitle.setText(model.title)
+//                    val textColor = ContextCompat.getColor(itemView.context, R.color.categoryTitle)
+//                    txtTitle.setTextColor(textColor)
+//                    txtTitle.setText(model.title)
                     imgArrow.visibility = View.GONE
                 }
             }
