@@ -16,6 +16,9 @@ android {
         versionCode project.version_code
         versionName project.version_name
 
+        multiDexEnabled true
+
+
         dataBinding {
             enabled = true
         }
@@ -72,10 +75,10 @@ android {
 dependencies {
 
     implementation project(':shared:libraries')
+    implementation project(':shared:ui')
     implementation project(':feature:about')
     implementation project(':feature:dictionary')
     implementation project(':feature:home')
-    implementation project(':feature:test')
     implementation project(':feature:verbs')
     implementation project(':feature:links')
     implementation project(':feature:article')

@@ -6,9 +6,6 @@ subprojects {
                 defaultConfig {
                     minSdkVersion versions.minSdkVersion
                     targetSdkVersion versions.targetSdkVersion
-
-                    multiDexEnabled true
-
                 }
 
             }
