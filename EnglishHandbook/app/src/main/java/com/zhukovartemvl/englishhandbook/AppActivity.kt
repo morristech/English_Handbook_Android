@@ -14,7 +14,9 @@ import kotlinx.android.synthetic.main.activity_app.*
 
 class AppActivity : AppCompatActivity() {
 
-    private val navigator: Navigator = getKoinInstance()
+    private val navigator: Navigator by lazy {
+        getKoinInstance<Navigator>()
+    }
 
     private val navController by lazy(LazyThreadSafetyMode.NONE) {
         Navigation.findNavController(this, R.id.navHostMain)
@@ -23,6 +25,8 @@ class AppActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_app)
+
+        setupNavigation()
     }
 
     private fun setupNavigation() {

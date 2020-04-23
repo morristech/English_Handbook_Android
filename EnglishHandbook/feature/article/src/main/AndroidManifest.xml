@@ -1,13 +1,2 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:dist="http://schemas.android.com/apk/distribution"
-    package="com.zhukovartemvl.article">
-
-
-    <dist:module
-        dist:instant="false"
-        dist:onDemand="false"
-        dist:title="@string/title_article">
-        <dist:fusing dist:include="true" />
-    </dist:module>
-</manifest>
+<manifest package="com.zhukovartemvl.article"/>
 
