@@ -1,0 +1,22 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+dependencies {
+    api deps.androidx
+    api deps.androidxConstraint
+
+    api deps.navigation
+    api deps.navigationFragment
+
+    api deps.coroutinesCore
+    api deps.coroutinesAndroid
+
+    api deps.lifecycleViewModel
+    api deps.lifecycleLiveData
+
+    api deps.koinAndroid
+    api deps.koinViewModel
+    api deps.koinScope
+
+}

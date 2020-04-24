@@ -9,7 +9,6 @@ import org.koin.dsl.module
 val appModule = module {
 
     single { Navigator() }
-
 }
 
 inline fun <reified T> getKoinInstance(): T {

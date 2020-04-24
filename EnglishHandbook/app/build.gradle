@@ -8,11 +8,8 @@ apply plugin: 'io.fabric'
 apply plugin: 'com.google.gms.google-services'
 
 android {
-    compileSdkVersion 29
     defaultConfig {
         applicationId "com.zhukovartemvl.englishhandbook"
-        minSdkVersion project.android_minSDK
-        targetSdkVersion project.android_targetSDK
         versionCode project.version_code
         versionName project.version_name
 
@@ -64,17 +61,16 @@ android {
         test.java.srcDirs += 'src/test/kotlin'
         androidTest.java.srcDirs += 'src/androidTest/kotlin'
     }
+}
 
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-
+kapt {
+    correctErrorTypes true
 }
 
 dependencies {
 
-    implementation project(':shared:libraries')
-    implementation project(':shared:ui')
+//    implementation project(':shared:libraries')
+    implementation project(':shared:core-ui')
     implementation project(':feature:about')
     implementation project(':feature:dictionary')
     implementation project(':feature:home')
@@ -82,7 +78,6 @@ dependencies {
     implementation project(':feature:links')
     implementation project(':feature:article')
     implementation project(':domain')
-
 
     implementation 'com.google.firebase:firebase-core:17.3.0'
     implementation 'com.google.firebase:firebase-analytics:17.3.0'

@@ -1,6 +1,7 @@
 package com.zhukovartemvl.englishhandbook
 
 import androidx.multidex.MultiDexApplication
+import com.zhukovartemvl.article.di.featureArticleModule
 import com.zhukovartemvl.englishhandbook.di.appModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger

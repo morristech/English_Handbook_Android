@@ -4,44 +4,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
-//android {
-//    compileSdkVersion 29
-//    buildToolsVersion "29.0.2"
-//
-//
-//    defaultConfig {
-//        minSdkVersion 19
-//        targetSdkVersion 29
-//        versionCode 1
-//        versionName "1.0"
-//
-//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-//        consumerProguardFiles 'consumer-rules.pro'
-//    }
-//
-//    buildTypes {
-//        release {
-//            minifyEnabled false
-//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-//        }
-//    }
-//
-//}
-
 dependencies {
-//    implementation fileTree(dir: 'libs', include: ['*.jar'])
-//    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation project(':shared:core')
+//    implementation project(':shared:libraries')
 
-//    implementation 'androidx.appcompat:appcompat:1.1.0'
-//    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation deps.roomCore
+    implementation deps.roomKotlin
+    kapt deps.roomKapt
 
-//    def roomVersion = "2.2.5"
-//    implementation "android.arch.persistence.room:runtime:$roomVersion"
-//    implementation "androidx.room:room-ktx:$roomVersion"
-//    kapt "android.arch.persistence.room:compiler:$roomVersion"
-
-
-
-    implementation project(':shared:models')
-    implementation project(':shared:libraries')
 }
