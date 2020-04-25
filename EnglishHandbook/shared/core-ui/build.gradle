@@ -17,6 +17,5 @@ dependencies {
 
     api deps.koinAndroid
     api deps.koinViewModel
-    api deps.koinScope
 
 }
