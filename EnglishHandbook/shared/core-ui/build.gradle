@@ -2,6 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+
 dependencies {
     api deps.androidx
     api deps.androidxConstraint
@@ -17,5 +18,4 @@ dependencies {
 
     api deps.koinAndroid
     api deps.koinViewModel
-
 }
