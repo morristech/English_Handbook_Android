@@ -1,17 +1,23 @@
 package com.zhukovartemvl.data.repository
 
+import com.zhukovartemvl.data.db.DatabaseLoader
 import com.zhukovartemvl.shared.model.*
 import com.zhukovartemvl.shared.repository.DatabaseRepository
 
 
-class DatabaseRepositoryImpl: DatabaseRepository {
+class DatabaseRepositoryImpl(private val databaseLoader: DatabaseLoader) : DatabaseRepository {
 
     override fun getHierarchy(parentId: Int): List<HierarchyItem> {
         TODO("Not yet implemented")
     }
 
     override fun getDatabaseParameter(): DatabaseParametersItem {
-        TODO("Not yet implemented")
+        val parameters = databaseLoader.instance.parameterDao().getParameters
+        return DatabaseParametersItem(
+            parameters.version,
+            parameters.lastUpdate,
+            parameters.updateNote
+        )
     }
 
     override fun getArticle(key: String): ArticleItem {

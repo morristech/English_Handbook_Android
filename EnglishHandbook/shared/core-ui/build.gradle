@@ -15,7 +15,4 @@ dependencies {
 
     api deps.lifecycleViewModel
     api deps.lifecycleLiveData
-
-    api deps.koinAndroid
-    api deps.koinViewModel
 }
