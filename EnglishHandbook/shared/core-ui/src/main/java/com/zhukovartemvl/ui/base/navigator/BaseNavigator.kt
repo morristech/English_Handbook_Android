@@ -1,4 +1,4 @@
-package com.zhukovartemvl.ui.base
+package com.zhukovartemvl.ui.base.navigator
 
 import androidx.navigation.NavController
 

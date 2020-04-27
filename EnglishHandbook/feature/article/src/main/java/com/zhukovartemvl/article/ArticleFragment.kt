@@ -33,7 +33,6 @@ class ArticleFragment : Fragment() {
         binding.viewModel = articleViewModel
         binding.lifecycleOwner = this
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -4,17 +4,18 @@ import android.content.Context
 import androidx.room.Room
 import com.zhukovartemvl.data.utils.unpackZip
 import com.zhukovartemvl.shared.model.DatabaseInfo
+import com.zhukovartemvl.shared.repository.DatabaseLoader
 import java.io.File
 import java.lang.Exception
 import java.net.URL
 
 
-class DatabaseLoader(private val databaseInfo: DatabaseInfo) {
+class DatabaseLoaderImpl(private val databaseInfo: DatabaseInfo) : DatabaseLoader {
 
     lateinit var instance: AppDatabase
         private set
 
-    fun init(context: Context): Boolean {
+    override fun init(context: Context): Boolean {
         if (!databaseExists() && !downloadDatabase())
             return false
 
@@ -22,7 +23,7 @@ class DatabaseLoader(private val databaseInfo: DatabaseInfo) {
         return true
     }
 
-    fun updateDatabase(context: Context): Boolean {
+    override fun updateDatabase(context: Context): Boolean {
         if (downloadDatabase()) {
             initDatabase(context)
             return true
@@ -30,7 +31,7 @@ class DatabaseLoader(private val databaseInfo: DatabaseInfo) {
         return false
     }
 
-    fun updateAvailable(): Boolean {
+    override fun updateAvailable(): Boolean {
         val version = instance.parameterDao().getParameters.version
         val updateVersion = getUpdateVersion()
         return version < updateVersion

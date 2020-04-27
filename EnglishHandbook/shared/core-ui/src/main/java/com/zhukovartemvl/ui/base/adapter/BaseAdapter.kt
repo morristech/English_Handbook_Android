@@ -1,4 +1,4 @@
-package com.zhukovartemvl.ui.base
+package com.zhukovartemvl.ui.base.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import java.util.ArrayList

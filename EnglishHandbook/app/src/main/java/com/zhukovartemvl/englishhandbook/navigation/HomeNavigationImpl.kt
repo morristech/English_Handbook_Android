@@ -1,43 +1,40 @@
-package com.zhukovartemvl.englishhandbook
+package com.zhukovartemvl.englishhandbook.navigation
 
 import com.zhukovartemvl.article.ArticleFragment
 import com.zhukovartemvl.dictionary.DictionaryFragment
+import com.zhukovartemvl.englishhandbook.R
 import com.zhukovartemvl.englishhandbook.home.HomeNavigation
-import com.zhukovartemvl.ui.base.BaseNavigator
+import com.zhukovartemvl.ui.base.navigator.BaseNav
 
 
-class Navigator : BaseNavigator(), HomeNavigation {
+class HomeNavigationImpl(private val navigation: BaseNav) : HomeNavigation {
 
     override fun openArticle(key: String) {
-        navController?.navigate(
+        navigation.navigate(
             R.id.toArticleFragment,
             ArticleFragment.createBundle(key)
         )
     }
 
     override fun openDictionary(key: String) {
-        navController?.navigate(
+        navigation.navigate(
             R.id.toDictionaryFragment,
             DictionaryFragment.createBundle(key)
         )
     }
 
     override fun openLinks(key: String) {
-        navController?.navigate(
+        navigation.navigate(
             R.id.toArticleFragment,
             ArticleFragment.createBundle(key)
         )
     }
 
     override fun openVerbs(key: String) {
-        navController?.navigate(
+        navigation.navigate(
             R.id.toArticleFragment,
             ArticleFragment.createBundle(key)
         )
-    }
-
-    fun openAbout() {
-        navController?.navigate(R.id.toAboutFragment)
     }
 
 }

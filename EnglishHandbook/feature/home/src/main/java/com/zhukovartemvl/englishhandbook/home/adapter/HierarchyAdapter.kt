@@ -7,12 +7,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.content.ContextCompat
 import com.zhukovartemvl.englishhandbook.home.R
 import com.zhukovartemvl.shared.model.*
-import com.zhukovartemvl.ui.base.BaseAdapter
-import com.zhukovartemvl.ui.base.BaseAdapterCallback
-import com.zhukovartemvl.ui.base.BaseViewHolder
+import com.zhukovartemvl.ui.base.adapter.BaseAdapter
+import com.zhukovartemvl.ui.base.adapter.BaseAdapterCallback
+import com.zhukovartemvl.ui.base.adapter.BaseViewHolder
 
 
 class HierarchyAdapter : BaseAdapter<Category>() {
