@@ -2,10 +2,10 @@ package com.zhukovartemvl.englishhandbook.navigation
 
 import android.os.Bundle
 import androidx.navigation.NavController
-import com.zhukovartemvl.ui.base.navigator.BaseNav
+import com.zhukovartemvl.ui.base.navigator.BaseNavigator
 
 
-class Navigator() : BaseNav {
+class Navigator() : BaseNavigator {
 
     private var navController: NavController? = null
 

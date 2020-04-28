@@ -1,46 +1,114 @@
 package com.zhukovartemvl.data.utils
 
+import net.lingala.zip4j.exception.ZipException
+import net.lingala.zip4j.io.inputstream.ZipInputStream
+import net.lingala.zip4j.model.LocalFileHeader
 import java.io.*
-import java.util.zip.ZipEntry
-import java.util.zip.ZipInputStream
 
-//New
 
-//ДОБАВИТЬ ПУТЬ, КУДА БУДЕТ РАСПАКОВЫВАТЬСЯ АРХИВ
-//http://blog.alutam.com/2009/10/31/reading-password-protected-zip-files-in-java/
-
+//fun inputStream: InputStream, path: String, password: String): Boolean {
+//    try {
+//        if (destDir.isDirectory && !destDir.exists()) {
+//            destDir.mkdir()
+//        }
+//
+//        //2.初始化zip工具
+//        val zFile = ZipFile(zipFile)
+//        zFile.setFileNameCharset("UTF-8")
+//        if (!zFile.isValidZipFile) {
+//            throw ZipException("压缩文件不合法,可能被损坏.")
+//        }
+//        //3.判断是否已加密
+//        if (zFile.isEncrypted) {
+//            zFile.setPassword(passwd!!.toCharArray())
+//        }
+//        //4.解压所有文件
+//        zFile.extractAll(destDir.absolutePath)
+//        val headerList: MutableList<FileHeader?> = zFile.fileHeaders as MutableList<FileHeader?>
+//        val extractedFileList: MutableList<File> = ArrayList()
+//        for (fileHeader in headerList) {
+//            if (!fileHeader!!.isDirectory) {
+//                extractedFileList.add(File(destDir, fileHeader.fileName))
+//            }
+//        }
+//    } catch (e: ZipException) {
+//        e.printStackTrace()
+//        return false
+//    }
+//    return true
+//}
 
 fun unpackZip(inputStream: InputStream, path: String, password: String): Boolean {
     try {
-        val decryptInputStream = ZipDecryptInputStream(inputStream, password)
-        ZipInputStream(decryptInputStream).use { zipInputStream ->
+        var localFileHeader: LocalFileHeader
+        var readLen: Int
+        val readBuffer = ByteArray(4096)
 
+        ZipInputStream(BufferedInputStream(inputStream) as InputStream, password.toCharArray()).use { zipInputStream ->
             val file = File(path)
-            if (!file.exists())
+            if (!file.exists()) {
                 file.mkdirs()
-
-            var zipEntry: ZipEntry
-            while (zipInputStream.nextEntry.also { zipEntry = it } != null) {
-
-                val outputFile = File(file, zipEntry.name)
-                if (!outputFile.canonicalPath.startsWith(path))
-                    return false
-
-                FileOutputStream(outputFile).use { fileOutputStream ->
-                    var b: Int
-                    while (zipInputStream.read().also { b = it } != -1) {
-                        fileOutputStream.write(b)
-                    }
-                }
-                zipInputStream.closeEntry()
             }
 
+            while (zipInputStream.nextEntry.also { localFileHeader = it } != null) {
+
+                val outputFile = File(file, localFileHeader.fileName)
+//                if (!outputFile.canonicalPath.startsWith(path)) {
+//                    return false
+//                }
+
+//                val extractedFile = File(localFileHeader.fileName)
+                FileOutputStream(outputFile).use { outputStream ->
+
+                    while (zipInputStream.read(readBuffer).also { readLen = it } != -1) {
+                        outputStream.write(readBuffer, 0, readLen)
+                    }
+
+                }
+            }
         }
-    } catch (e: Exception) {
+    } catch (e: ZipException) {
         return false
     }
     return true
 }
+
+//fun unpackZip(inputStream: InputStream, path: String, password: String): Boolean {
+//    try {
+//        ZipFile("filename.zip", "password".toCharArray()).extractAll("/destination_directory")
+//
+////        ZipFile("englishDB.zip").
+//
+//
+////        val decryptInputStream = ZipDecryptInputStream(inputStream, password)
+////        ZipInputStream(decryptInputStream).use { zipInputStream ->
+////
+////            val file = File(path)
+////            if (!file.exists())
+////                file.mkdirs()
+////
+////            var zipEntry: ZipEntry
+////            while (zipInputStream.nextEntry.also { zipEntry = it } != null) {
+////
+////                val outputFile = File(file, zipEntry.name)
+////                if (!outputFile.canonicalPath.startsWith(path))
+////                    return false
+////
+////                FileOutputStream(outputFile).use { fileOutputStream ->
+////                    var b: Int
+////                    while (zipInputStream.read().also { b = it } != -1) {
+////                        fileOutputStream.write(b)
+////                    }
+////                }
+////                zipInputStream.closeEntry()
+////            }
+////
+////        }
+//    } catch (e: Exception) {
+//        return false
+//    }
+//    return true
+//}
 //
 //fun main(filename: String, password: String) {
 //    val fis = FileInputStream(filename)

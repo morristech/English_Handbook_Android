@@ -1,10 +1,14 @@
 package com.zhukovartemvl.shared.repository
 
+import android.content.Context
 import com.zhukovartemvl.shared.model.*
 
 
 interface DatabaseRepository {
 
+    fun initDatabase(context: Context) : Boolean
+    fun updateAvailable() : Boolean
+    fun updateDatabase(context: Context) : Boolean
     fun getHierarchy(parentId: Int): List<HierarchyItem>
     fun getDatabaseParameter(): DatabaseParametersItem
     fun getArticle(key: String): ArticleItem

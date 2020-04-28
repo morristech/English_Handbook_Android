@@ -3,24 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loadingFragment">
-
-    <fragment
-        android:id="@+id/loadingFragment"
-        android:name="com.zhukovartemvl.loading.LoadingFragment"
-        android:label="LoadingFragment"
-        tools:layout="@layout/fragment_loading">
-        <action
-            android:id="@+id/toHomeFragment"
-            app:destination="@id/homeFragment"
-            app:popUpTo="@id/loadingFragment"
-            app:launchSingleTop="true"
-            app:popUpToInclusive="true"/>
-    </fragment>
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.zhukovartemvl.englishhandbook.home.HomeFragment"
+        android:name="com.zhukovartemvl.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
         <action
@@ -48,7 +35,7 @@
         android:id="@+id/articleFragment"
         android:name="com.zhukovartemvl.article.ArticleFragment"
         android:label="fragment_article"
-        tools:layout="@layout/fragment_article" >
+        tools:layout="@layout/fragment_article">
         <argument
             android:name="key"
             app:argType="string" />
@@ -60,7 +47,7 @@
         android:id="@+id/dictionaryFragment"
         android:name="com.zhukovartemvl.dictionary.DictionaryFragment"
         android:label="fragment_dictionary"
-        tools:layout="@layout/fragment_dictionary" >
+        tools:layout="@layout/fragment_dictionary">
         <argument
             android:name="key"
             app:argType="string" />
@@ -72,7 +59,7 @@
         android:id="@+id/verbsFragment"
         android:name="com.zhukovartemvl.verbs.VerbsFragment"
         android:label="fragment_verbs"
-        tools:layout="@layout/fragment_verbs" >
+        tools:layout="@layout/fragment_verbs">
         <argument
             android:name="key"
             app:argType="string" />
@@ -84,7 +71,7 @@
         android:id="@+id/linksFragment"
         android:name="com.zhukovartemvl.links.LinksFragment"
         android:label="fragment_links"
-        tools:layout="@layout/fragment_links" >
+        tools:layout="@layout/fragment_links">
         <argument
             android:name="key"
             app:argType="string" />

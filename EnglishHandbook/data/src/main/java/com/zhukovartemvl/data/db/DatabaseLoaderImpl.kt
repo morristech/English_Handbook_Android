@@ -4,26 +4,30 @@ import android.content.Context
 import androidx.room.Room
 import com.zhukovartemvl.data.utils.unpackZip
 import com.zhukovartemvl.shared.model.DatabaseInfo
-import com.zhukovartemvl.shared.repository.DatabaseLoader
 import java.io.File
 import java.lang.Exception
 import java.net.URL
 
 
-class DatabaseLoaderImpl(private val databaseInfo: DatabaseInfo) : DatabaseLoader {
+class DatabaseLoaderImpl(private val databaseInfo: DatabaseInfo) {
 
     lateinit var instance: AppDatabase
         private set
 
-    override fun init(context: Context): Boolean {
-        if (!databaseExists() && !downloadDatabase())
-            return false
+    fun init(context: Context): Boolean {
+        val isExists = databaseExists()
+
+        if (!isExists) {
+            val isDatabaseDownloaded = downloadDatabase()
+            if (!isDatabaseDownloaded)
+                return false
+        }
 
         initDatabase(context)
         return true
     }
 
-    override fun updateDatabase(context: Context): Boolean {
+    fun updateDatabase(context: Context): Boolean {
         if (downloadDatabase()) {
             initDatabase(context)
             return true
@@ -31,7 +35,7 @@ class DatabaseLoaderImpl(private val databaseInfo: DatabaseInfo) : DatabaseLoade
         return false
     }
 
-    override fun updateAvailable(): Boolean {
+    fun updateAvailable(): Boolean {
         val version = instance.parameterDao().getParameters.version
         val updateVersion = getUpdateVersion()
         return version < updateVersion
@@ -45,14 +49,15 @@ class DatabaseLoaderImpl(private val databaseInfo: DatabaseInfo) : DatabaseLoade
             .also { instance = it }
 
     private fun downloadDatabase(): Boolean {
-        return try {
+//        return try {
             URL(databaseInfo.link).openStream().use { input ->
-                unpackZip(input, databaseInfo.path, databaseInfo.password)
+                return unpackZip(input, databaseInfo.path, databaseInfo.password)
             }
-            true
-        } catch (e: Exception) {
-            false
-        }
+//            true
+//        } catch (e: Exception) {
+//            false
+//        }
+
     }
 
     private fun getUpdateVersion(): Double {
@@ -65,4 +70,5 @@ class DatabaseLoaderImpl(private val databaseInfo: DatabaseInfo) : DatabaseLoade
             0.0
         }
     }
+
 }

@@ -1,17 +1,12 @@
 package com.zhukovartemvl.ui.base.navigator
 
+import android.os.Bundle
 import androidx.navigation.NavController
 
 
-abstract class BaseNavigator {
-
-    protected var navController: NavController? = null
-
-    fun bind(navController: NavController) {
-        this.navController = navController
-    }
-
-    fun unbind() {
-        navController = null
-    }
+interface BaseNavigator {
+    fun navigate(destination: Int, bundle: Bundle)
+    fun navigate(destination: Int)
+    fun bind(navController: NavController)
+    fun unbind()
 }

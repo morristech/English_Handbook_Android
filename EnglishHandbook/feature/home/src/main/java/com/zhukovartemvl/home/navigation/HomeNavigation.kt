@@ -1,4 +1,4 @@
-package com.zhukovartemvl.englishhandbook.home
+package com.zhukovartemvl.englishhandbook.home.navigation
 
 
 interface HomeNavigation {
@@ -6,4 +6,5 @@ interface HomeNavigation {
     fun openDictionary(key: String)
     fun openLinks(key: String)
     fun openVerbs(key: String)
+    fun openAbout()
 }

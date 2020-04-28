@@ -11,4 +11,6 @@ dependencies {
     implementation deps.roomCore
     implementation deps.roomKotlin
     kapt deps.roomKapt
+
+    implementation deps.zip4j
 }

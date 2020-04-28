@@ -6,7 +6,6 @@
     <string name="database_version_link" translatable="false">https://dl.dropbox.com/s/05d904wtt4t07c1/version.txt?dl=0</string>
     <string name="database_pass" translatable="false">_Ar7y0M.Eng1sh^d47aB453</string>
 
-
     <!--!!!!!!!!!!!!!!!!!TEST!!!!!!!!!!!!!!!!!-->
     <string name="ad_banner_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
     <string name="ad_interstitial_unit_id" translatable="false">ca-app-pub-3940256099942544/1033173712</string>

@@ -1,11 +1,24 @@
 package com.zhukovartemvl.data.repository
 
+import android.content.Context
 import com.zhukovartemvl.data.db.DatabaseLoaderImpl
 import com.zhukovartemvl.shared.model.*
 import com.zhukovartemvl.shared.repository.DatabaseRepository
 
 
 class DatabaseRepositoryImpl(private val databaseLoader: DatabaseLoaderImpl) : DatabaseRepository {
+
+    override fun initDatabase(context: Context): Boolean {
+        return databaseLoader.init(context)
+    }
+
+    override fun updateAvailable(): Boolean {
+        return databaseLoader.updateAvailable()
+    }
+
+    override fun updateDatabase(context: Context): Boolean {
+        return databaseLoader.updateDatabase(context)
+    }
 
     override fun getHierarchy(parentId: Int): List<HierarchyItem> {
         TODO("Not yet implemented")

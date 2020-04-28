@@ -1,15 +1,14 @@
 package com.zhukovartemvl.englishhandbook.di
 
 import android.content.Context
-import com.zhukovartemvl.englishhandbook.navigation.AppNavigation
+import com.zhukovartemvl.englishhandbook.AppViewModel
 import com.zhukovartemvl.englishhandbook.R
-import com.zhukovartemvl.englishhandbook.home.HomeNavigation
+import com.zhukovartemvl.englishhandbook.home.navigation.HomeNavigation
 import com.zhukovartemvl.englishhandbook.navigation.HomeNavigationImpl
-import com.zhukovartemvl.englishhandbook.navigation.LoadingNavigationImpl
 import com.zhukovartemvl.englishhandbook.navigation.Navigator
-import com.zhukovartemvl.loading.LoadingNavigation
 import com.zhukovartemvl.shared.model.DatabaseInfo
-import com.zhukovartemvl.ui.base.navigator.BaseNav
+import com.zhukovartemvl.ui.base.navigator.BaseNavigator
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 import org.koin.dsl.module
@@ -17,13 +16,12 @@ import org.koin.dsl.module
 
 val appModule = module {
 
-
     single { getDatabaseInfo(get()) }
 
-    single { Navigator() as BaseNav }
-    factory { AppNavigation(get()) }
+    single { Navigator() as BaseNavigator }
     factory { HomeNavigationImpl(get()) as HomeNavigation }
-    factory { LoadingNavigationImpl(get()) as LoadingNavigation }
+
+    viewModel { AppViewModel(get()) }
 
 }
 
