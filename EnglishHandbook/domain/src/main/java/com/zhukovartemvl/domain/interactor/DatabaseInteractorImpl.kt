@@ -1,4 +1,4 @@
-package com.zhukovartemvl.domain
+package com.zhukovartemvl.domain.interactor
 
 import android.content.Context
 import com.zhukovartemvl.shared.interactor.DatabaseInteractor

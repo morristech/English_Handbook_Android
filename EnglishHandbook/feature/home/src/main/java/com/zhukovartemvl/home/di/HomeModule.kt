@@ -1,4 +1,4 @@
-package com.zhukovartemvl.englishhandbook.home.di
+package com.zhukovartemvl.home.di
 
 import com.zhukovartemvl.home.HomeViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel

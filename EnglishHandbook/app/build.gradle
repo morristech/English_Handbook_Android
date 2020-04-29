@@ -71,6 +71,7 @@ kapt {
 dependencies {
     implementation project(':shared:core')
     implementation project(':shared:core-ui')
+    implementation project(':shared:resources')
     implementation project(':feature:about')
     implementation project(':feature:dictionary')
     implementation project(':feature:home')

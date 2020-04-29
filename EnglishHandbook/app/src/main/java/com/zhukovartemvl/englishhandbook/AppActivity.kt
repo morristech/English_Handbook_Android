@@ -37,7 +37,6 @@ class AppActivity : AppCompatActivity() {
         }
     }
 
-
     override fun onResume() {
         super.onResume()
         navigator.bind(findNavController(R.id.navHostMain))

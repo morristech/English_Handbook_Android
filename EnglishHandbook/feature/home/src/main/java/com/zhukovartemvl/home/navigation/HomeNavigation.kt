@@ -1,4 +1,4 @@
-package com.zhukovartemvl.englishhandbook.home.navigation
+package com.zhukovartemvl.home.navigation
 
 
 interface HomeNavigation {

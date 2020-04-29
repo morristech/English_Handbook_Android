@@ -3,10 +3,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="about">О приложении</string>
 
-    <string-array name="addTestDevices">
-        <item>AF0729A8CC962D29D05646A07A6B3C1F</item>
-        <item>F13F8F2564B0D7004D9A7F46B3263E48</item>
-        <item>469CA45A5F2F16B7C6126F2AFBB3809D</item>
-    </string-array>
+
 
 </resources>

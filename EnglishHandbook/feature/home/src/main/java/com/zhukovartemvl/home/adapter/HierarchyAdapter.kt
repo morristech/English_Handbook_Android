@@ -1,4 +1,4 @@
-package com.zhukovartemvl.englishhandbook.home.adapter
+package com.zhukovartemvl.home.adapter
 
 import android.graphics.Typeface
 import android.view.LayoutInflater

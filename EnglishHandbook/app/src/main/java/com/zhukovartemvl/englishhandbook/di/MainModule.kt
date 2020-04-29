@@ -3,7 +3,7 @@ package com.zhukovartemvl.englishhandbook.di
 import android.content.Context
 import com.zhukovartemvl.englishhandbook.AppViewModel
 import com.zhukovartemvl.englishhandbook.R
-import com.zhukovartemvl.englishhandbook.home.navigation.HomeNavigation
+import com.zhukovartemvl.home.navigation.HomeNavigation
 import com.zhukovartemvl.englishhandbook.navigation.HomeNavigationImpl
 import com.zhukovartemvl.englishhandbook.navigation.Navigator
 import com.zhukovartemvl.shared.model.DatabaseInfo

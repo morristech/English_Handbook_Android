@@ -1,8 +1,8 @@
 package com.zhukovartemvl.domain.di
 
-import com.zhukovartemvl.domain.AboutInteractorImpl
-import com.zhukovartemvl.domain.CategoryInteractorImpl
-import com.zhukovartemvl.domain.DatabaseInteractorImpl
+import com.zhukovartemvl.domain.interactor.AboutInteractorImpl
+import com.zhukovartemvl.domain.interactor.CategoryInteractorImpl
+import com.zhukovartemvl.domain.interactor.DatabaseInteractorImpl
 import com.zhukovartemvl.shared.interactor.AboutInteractor
 import com.zhukovartemvl.shared.interactor.CategoryInteractor
 import com.zhukovartemvl.shared.interactor.DatabaseInteractor

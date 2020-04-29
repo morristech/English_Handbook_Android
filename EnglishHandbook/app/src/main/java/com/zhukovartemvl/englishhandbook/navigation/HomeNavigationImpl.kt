@@ -3,7 +3,7 @@ package com.zhukovartemvl.englishhandbook.navigation
 import com.zhukovartemvl.article.ArticleFragment
 import com.zhukovartemvl.dictionary.DictionaryFragment
 import com.zhukovartemvl.englishhandbook.R
-import com.zhukovartemvl.englishhandbook.home.navigation.HomeNavigation
+import com.zhukovartemvl.home.navigation.HomeNavigation
 import com.zhukovartemvl.ui.base.navigator.BaseNavigator
 
 
