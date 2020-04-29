@@ -2,6 +2,7 @@
     <string name="app_name">English Handbook</string>
 
     <string name="database_name" translatable="false">english.db</string>
+    <string name="database_zip_name" translatable="false">englishDB.zip.db</string>
     <string name="database_link" translatable="false">https://dl.dropbox.com/s/f3liq7lyunoybfp/englishDB.zip?dl=0</string>
     <string name="database_version_link" translatable="false">https://dl.dropbox.com/s/05d904wtt4t07c1/version.txt?dl=0</string>
     <string name="database_pass" translatable="false">_Ar7y0M.Eng1sh^d47aB453</string>

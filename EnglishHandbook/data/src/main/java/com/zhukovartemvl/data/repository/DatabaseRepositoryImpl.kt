@@ -1,52 +1,49 @@
 package com.zhukovartemvl.data.repository
 
 import android.content.Context
+import com.zhukovartemvl.data.converter.*
 import com.zhukovartemvl.data.db.DatabaseLoaderImpl
 import com.zhukovartemvl.shared.model.*
 import com.zhukovartemvl.shared.repository.DatabaseRepository
 
 
-class DatabaseRepositoryImpl(private val databaseLoader: DatabaseLoaderImpl) : DatabaseRepository {
+class DatabaseRepositoryImpl(private val database: DatabaseLoaderImpl) : DatabaseRepository {
 
     override fun initDatabase(context: Context): Boolean {
-        return databaseLoader.init(context)
+        return database.init(context)
     }
 
     override fun updateAvailable(): Boolean {
-        return databaseLoader.updateAvailable()
+        return database.updateAvailable()
     }
 
     override fun updateDatabase(context: Context): Boolean {
-        return databaseLoader.updateDatabase(context)
+        return database.updateDatabase(context)
     }
 
     override fun getHierarchy(parentId: Int): List<HierarchyItem> {
-        TODO("Not yet implemented")
+        return database.instance.hierarchyDao().getAllChildren(parentId)
+            .map { it.toHierarchyItem() }
     }
 
     override fun getDatabaseParameter(): DatabaseParametersItem {
-        val parameters = databaseLoader.instance.parameterDao().getParameters
-        return DatabaseParametersItem(
-            parameters.version,
-            parameters.lastUpdate,
-            parameters.updateNote
-        )
+        return database.instance.parameterDao().getParameters.toDatabaseParametersItem()
     }
 
     override fun getArticle(key: String): ArticleItem {
-        TODO("Not yet implemented")
+        return database.instance.articleDao().getByKey(key).toArticleItem()
     }
 
     override fun getDictionary(key: String): List<DictionaryItem> {
-        TODO("Not yet implemented")
+        return database.instance.dictionaryDao().getByKey(key).map { it.toDictionaryItem() }
     }
 
     override fun getVerbs(key: String): List<IrregularVerbItem> {
-        TODO("Not yet implemented")
+        return database.instance.verbDao().getByKey(key).map { it.toIrregularVerbItem() }
     }
 
     override fun getLinks(key: String): List<LinkItem> {
-        TODO("Not yet implemented")
+        return database.instance.linkDao().getByKey(key).map { it.toLinkItem() }
     }
 
 }

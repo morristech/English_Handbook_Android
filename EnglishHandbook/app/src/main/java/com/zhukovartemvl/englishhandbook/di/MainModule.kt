@@ -27,6 +27,7 @@ val appModule = module {
 
 private fun getDatabaseInfo(context: Context) = DatabaseInfo(
     context.getString(R.string.database_name),
+    context.getString(R.string.database_zip_name),
     "${context.applicationInfo.dataDir}/databases/",
     context.getString(R.string.database_link),
     context.getString(R.string.database_version_link),
