@@ -8,11 +8,11 @@ fun ArticleEntity.toArticleItem(): ArticleItem {
     return ArticleItem(text)
 }
 
-fun DatabaseParametersEntity.toDatabaseParametersItem() : DatabaseParametersItem {
+fun DatabaseParametersEntity.toDatabaseParametersItem(): DatabaseParametersItem {
     return DatabaseParametersItem(version, lastUpdate, updateNote)
 }
 
-fun DictionaryEntity.toDictionaryItem() : DictionaryItem {
+fun DictionaryEntity.toDictionaryItem(): DictionaryItem {
     return DictionaryItem(text, translation)
 }
 

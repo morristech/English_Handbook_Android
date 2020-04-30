@@ -15,5 +15,4 @@ interface DatabaseRepository {
     fun getDictionary(key: String): List<DictionaryItem>
     fun getVerbs(key: String): List<IrregularVerbItem>
     fun getLinks(key: String): List<LinkItem>
-
 }

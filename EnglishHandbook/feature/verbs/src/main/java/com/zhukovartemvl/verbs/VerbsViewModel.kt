@@ -9,4 +9,8 @@ class VerbsViewModel(): ViewModel() {
 
     val test = MutableLiveData<String>().default(initialValue = "1.0.0")
 
+
+    fun init(key: String, title: String) {
+
+    }
 }

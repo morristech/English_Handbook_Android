@@ -71,10 +71,10 @@ class HomeViewModel(
                             adapter.updateItems(newCategories)
                         }
                     }
-                    is Article -> navigation.openArticle(model.key)
-                    is IrregularVerbs -> navigation.openVerbs(model.key)
-                    is Dictionary -> navigation.openDictionary(model.key)
-                    is Links -> navigation.openLinks(model.key)
+                    is Article -> navigation.openArticle(model.key, model.title)
+                    is IrregularVerbs -> navigation.openVerbs(model.key, model.title)
+                    is Dictionary -> navigation.openDictionary(model.key, model.title)
+                    is Links -> navigation.openLinks(model.key, model.title)
                 }
             }
         })

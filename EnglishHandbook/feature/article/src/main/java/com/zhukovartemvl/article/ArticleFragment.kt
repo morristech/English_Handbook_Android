@@ -13,12 +13,20 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class ArticleFragment : Fragment() {
 
     companion object {
-        private const val FRAGMENT_KEY_ID = "FragmentKey"
-        fun createBundle(key: String) = Bundle().apply { putString(FRAGMENT_KEY_ID, key) }
+        private const val FRAGMENT_KEY_ID = "key"
+        private const val FRAGMENT_TITLE = "title"
+        fun createBundle(key: String, title: String) = Bundle().apply {
+            putString(FRAGMENT_KEY_ID, key)
+            putString(FRAGMENT_TITLE, title)
+        }
     }
 
     private val fragmentKey: String by lazy {
         arguments?.getString(FRAGMENT_KEY_ID) ?: throw IllegalStateException("no fragmentKey")
+    }
+
+    private val fragmentTitle: String by lazy {
+        arguments?.getString(FRAGMENT_TITLE) ?: throw IllegalStateException("no fragmentTitle")
     }
 
     private val articleViewModel: ArticleViewModel by viewModel()
@@ -38,7 +46,7 @@ class ArticleFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        articleViewModel.init(fragmentKey)
+        articleViewModel.init(fragmentKey, fragmentTitle)
     }
 
 }

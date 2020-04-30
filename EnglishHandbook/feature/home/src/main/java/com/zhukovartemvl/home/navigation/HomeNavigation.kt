@@ -2,9 +2,9 @@ package com.zhukovartemvl.home.navigation
 
 
 interface HomeNavigation {
-    fun openArticle(key: String)
-    fun openDictionary(key: String)
-    fun openLinks(key: String)
-    fun openVerbs(key: String)
+    fun openArticle(key: String, title: String)
+    fun openDictionary(key: String, title: String)
+    fun openLinks(key: String, title: String)
+    fun openVerbs(key: String, title: String)
     fun openAbout()
 }
