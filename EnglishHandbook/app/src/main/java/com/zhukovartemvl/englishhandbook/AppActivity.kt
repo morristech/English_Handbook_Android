@@ -6,6 +6,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.zhukovartemvl.englishhandbook.di.getKoinInstance
+import com.zhukovartemvl.ui.IOnBackPressed
 import com.zhukovartemvl.ui.base.navigator.BaseNavigator
 import kotlinx.android.synthetic.main.activity_app.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -29,12 +30,18 @@ class AppActivity : AppCompatActivity() {
         adBannerView.loadAd(appViewModel.loadBanner())
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id != R.id.aboutFragment ||
+            if (destination.id != R.id.aboutFragment &&
                 destination.id != R.id.homeFragment
             ) {
                 appViewModel.showInterstitial()
             }
         }
+    }
+
+    override fun onBackPressed() {
+        val fragment = navHostMain.childFragmentManager.fragments[0]
+        if (fragment !is IOnBackPressed || !fragment.onBackPressed())
+            super.onBackPressed()
     }
 
     override fun onResume() {

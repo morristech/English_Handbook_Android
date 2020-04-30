@@ -21,6 +21,7 @@
     <string name="version">Версия</string>
 
 
+    <string name="database_load">Загрузка базы данных</string>
     <string name="database_update">Обновление базы данных</string>
     <string name="database_no_upgrade">Обновление базы данных не требуется</string>
     <string name="database_updated">База данных обновлена</string>
