@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.zhukovartemvl.links.databinding.FragmentLinksBinding
+import kotlinx.android.synthetic.main.fragment_links.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -47,6 +48,8 @@ class LinksFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         linksViewModel.init(fragmentKey, fragmentTitle)
+
+        linksList.adapter = linksViewModel.adapter
     }
 
 }

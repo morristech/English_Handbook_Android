@@ -77,6 +77,7 @@ class HomeViewModel(
                     is Links -> navigation.openLinks(model.key, model.title)
                 }
             }
+
         })
     }
 

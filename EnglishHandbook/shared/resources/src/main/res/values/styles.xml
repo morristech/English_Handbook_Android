@@ -6,6 +6,13 @@
         <item name="android:background">@color/white</item>
     </style>
 
+    <style name="LineLinearLayout">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@drawable/line</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">2.0dip</item>
+    </style>
+
     <style name="TextShadow">
         <item name="android:shadowColor">@color/text_shadow</item>
         <item name="android:shadowDx">1</item>

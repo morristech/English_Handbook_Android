@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.zhukovartemvl.dictionary.databinding.FragmentDictionaryBinding
+import kotlinx.android.synthetic.main.fragment_dictionary.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -47,6 +48,8 @@ class DictionaryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         dictionaryViewModel.init(fragmentKey, fragmentTitle)
+
+        dictionaryList.adapter = dictionaryViewModel.adapter
     }
 
 }

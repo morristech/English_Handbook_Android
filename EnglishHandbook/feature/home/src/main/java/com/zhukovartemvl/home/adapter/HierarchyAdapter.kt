@@ -36,7 +36,7 @@ class HierarchyAdapter : BaseAdapter<Category>() {
         override fun bind(model: Category) {
             when (model) {
                 is BackItem -> {
-                    val textColor = ContextCompat.getColor(itemView.context, R.color.categoryTitle)
+                    val textColor = ContextCompat.getColor(itemView.context, R.color.clickableText)
                     txtTitle.setTextColor(textColor)
                     txtTitle.text = model.title
                     txtTitle.setTypeface(null, Typeface.BOLD)
@@ -47,7 +47,7 @@ class HierarchyAdapter : BaseAdapter<Category>() {
                 is Header -> bindHeader(model.title)
                 is Title -> bindHeader(model.title)
                 is Folder -> {
-                    val textColor = ContextCompat.getColor(itemView.context, R.color.categoryTitle)
+                    val textColor = ContextCompat.getColor(itemView.context, R.color.clickableText)
                     txtTitle.setTextColor(textColor)
                     txtTitle.text = model.title
                 }
@@ -69,7 +69,7 @@ class HierarchyAdapter : BaseAdapter<Category>() {
         }
 
         private fun bindItems(title: String) {
-            val textColor = ContextCompat.getColor(itemView.context, R.color.categoryTitle)
+            val textColor = ContextCompat.getColor(itemView.context, R.color.clickableText)
             txtTitle.setTextColor(textColor)
             txtTitle.text = title
             imgFolder.visibility = View.INVISIBLE

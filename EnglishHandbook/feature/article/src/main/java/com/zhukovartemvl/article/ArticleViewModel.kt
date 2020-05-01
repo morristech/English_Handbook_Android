@@ -15,6 +15,7 @@ import kotlinx.coroutines.withContext
 class ArticleViewModel(private val articleInteractor: ArticleInteractor) : ViewModel() {
 
     val text = MutableLiveData<Spanned>()
+    val description = MutableLiveData<String>()
 
     fun init(key: String, title: String) {
         GlobalScope.launch(Dispatchers.IO) {
@@ -22,8 +23,8 @@ class ArticleViewModel(private val articleInteractor: ArticleInteractor) : ViewM
 
             val htmlText = HtmlCompat.fromHtml(article.text, HtmlCompat.FROM_HTML_MODE_COMPACT)
             withContext(Dispatchers.Main) {
-
                 text.set(newValue = htmlText)
+                description.set(newValue = title)
             }
         }
     }

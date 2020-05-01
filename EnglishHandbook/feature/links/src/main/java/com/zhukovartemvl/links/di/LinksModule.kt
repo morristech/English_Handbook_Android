@@ -7,6 +7,6 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 
 val featureLinksModule = module {
 
-    viewModel { LinksViewModel() }
+    viewModel { LinksViewModel(get()) }
 
 }

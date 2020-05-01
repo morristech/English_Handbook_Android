@@ -7,6 +7,6 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 
 val featureDictionaryModule = module {
 
-    viewModel { DictionaryViewModel() }
+    viewModel { DictionaryViewModel(get()) }
 
 }

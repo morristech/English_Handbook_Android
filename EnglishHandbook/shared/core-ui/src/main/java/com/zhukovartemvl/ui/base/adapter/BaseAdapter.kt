@@ -51,7 +51,8 @@ abstract class BaseAdapter<P> : RecyclerView.Adapter<BaseViewHolder<P>>() {
         holder.bind(mDataList[position])
 
         holder.itemView.setOnClickListener {
-            mCallback?.onItemClick(mDataList[position], holder.itemView)
+            if (position >= 0 && position < mDataList.size)
+                mCallback?.onItemClick(mDataList[position], holder.itemView)
         }
         holder.itemView.setOnLongClickListener {
             if (mCallback != null)
