@@ -27,13 +27,16 @@ android {
 
     bundle {
         density {
-            enableSplit true // Different APKs are generated for devices with different screen densities; true by default.
+            enableSplit true
+            // Different APKs are generated for devices with different screen densities; true by default.
         }
         abi {
-            enableSplit true // Different APKs are generated for devices with different CPU architectures; true by default.
+            enableSplit true
+            // Different APKs are generated for devices with different CPU architectures; true by default.
         }
         language {
-            enableSplit false // This is disabled so that the App Bundle does NOT split the APK for each language.
+            enableSplit false
+            // This is disabled so that the App Bundle does NOT split the APK for each language.
         }
     }
 
@@ -85,4 +88,6 @@ dependencies {
     implementation deps.firebaseAnalytics
     implementation deps.firebaseCrashlytics
     implementation deps.firebaseAds
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 }
