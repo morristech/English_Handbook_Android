@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.zhukovartemvl.verbs.databinding.FragmentVerbsBinding
+import kotlinx.android.synthetic.main.fragment_verbs.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -47,6 +48,8 @@ class VerbsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         verbsViewModel.init(fragmentKey, fragmentTitle)
+
+        verbsList.adapter = verbsViewModel.adapter
     }
 
 }

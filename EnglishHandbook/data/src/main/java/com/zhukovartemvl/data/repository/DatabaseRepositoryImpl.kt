@@ -42,6 +42,10 @@ class DatabaseRepositoryImpl(private val database: DatabaseLoaderImpl) : Databas
         return database.instance.verbDao().getByKey(key).map { it.toIrregularVerbItem() }
     }
 
+    override fun getVerbs(): List<IrregularVerbItem> {
+        return database.instance.verbDao().getAll().map { it.toIrregularVerbItem() }
+    }
+
     override fun getLinks(key: String): List<LinkItem> {
         return database.instance.linkDao().getByKey(key).map { it.toLinkItem() }
     }

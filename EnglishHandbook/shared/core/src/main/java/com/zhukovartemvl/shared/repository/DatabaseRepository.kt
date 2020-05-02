@@ -14,5 +14,6 @@ interface DatabaseRepository {
     fun getArticle(key: String): ArticleItem
     fun getDictionary(key: String): List<DictionaryItem>
     fun getVerbs(key: String): List<IrregularVerbItem>
+    fun getVerbs(): List<IrregularVerbItem>
     fun getLinks(key: String): List<LinkItem>
 }

@@ -13,5 +13,6 @@ val domainModule = module {
     factory { DatabaseInteractorImpl(get()) as DatabaseInteractor }
     factory { DictionaryInteractorImpl(get()) as DictionaryInteractor }
     factory { LinksInteractorImpl(get()) as LinksInteractor }
+    factory { VerbsInteractorImpl(get()) as VerbsInteractor }
 
 }

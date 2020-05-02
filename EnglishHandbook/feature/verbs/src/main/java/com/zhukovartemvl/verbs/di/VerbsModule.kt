@@ -7,6 +7,6 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 
 val featureVerbsModule = module {
 
-    viewModel { VerbsViewModel() }
+    viewModel { VerbsViewModel(get()) }
 
 }
