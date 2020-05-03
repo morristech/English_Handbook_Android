@@ -4,6 +4,9 @@ subprojects {
             android {
                 compileSdkVersion android_targetSDK
                 defaultConfig {
+                    versionCode project.version_code
+                    versionName project.version_name
+
                     minSdkVersion android_minSDK
                     targetSdkVersion android_targetSDK
                 }

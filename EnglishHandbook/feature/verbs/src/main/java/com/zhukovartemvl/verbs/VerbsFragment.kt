@@ -1,10 +1,8 @@
 package com.zhukovartemvl.verbs
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.zhukovartemvl.verbs.databinding.FragmentVerbsBinding
 import kotlinx.android.synthetic.main.fragment_verbs.*
@@ -36,6 +34,7 @@ class VerbsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        setHasOptionsMenu(true)
         val binding: FragmentVerbsBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_verbs, container, false
         )
@@ -50,6 +49,19 @@ class VerbsFragment : Fragment() {
         verbsViewModel.init(fragmentKey, fragmentTitle)
 
         verbsList.adapter = verbsViewModel.adapter
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        menu.clear()
+        inflater.inflate(R.menu.verbs_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.sortButton -> verbsViewModel.sortVerbs()
+        }
+        return false
     }
 
 }

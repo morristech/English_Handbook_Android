@@ -6,14 +6,10 @@ import com.zhukovartemvl.shared.model.DatabaseParametersItem
 import com.zhukovartemvl.shared.repository.DatabaseRepository
 
 
-class AboutInteractorImpl(private val repository: DatabaseRepository) : AboutInteractor {
+class AboutInteractorImpl() : AboutInteractor {
 
     override fun getAppVersion(): String {
         return BuildConfig.VERSION_NAME
-    }
-
-    override fun getDatabaseParameters(): DatabaseParametersItem {
-        return repository.getDatabaseParameter()
     }
 
 }

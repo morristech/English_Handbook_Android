@@ -9,7 +9,7 @@ val domainModule = module {
 
     factory { ArticleInteractorImpl(get()) as ArticleInteractor }
     factory { CategoryInteractorImpl(get()) as CategoryInteractor }
-    factory { AboutInteractorImpl(get()) as AboutInteractor }
+    factory { AboutInteractorImpl() as AboutInteractor }
     factory { DatabaseInteractorImpl(get()) as DatabaseInteractor }
     factory { DictionaryInteractorImpl(get()) as DictionaryInteractor }
     factory { LinksInteractorImpl(get()) as LinksInteractor }

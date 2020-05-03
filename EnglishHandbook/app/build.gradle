@@ -11,8 +11,6 @@ apply plugin: 'com.google.gms.google-services'
 android {
     defaultConfig {
         applicationId "com.zhukovartemvl.englishhandbook"
-        versionCode project.version_code
-        versionName project.version_name
 
         multiDexEnabled true
 

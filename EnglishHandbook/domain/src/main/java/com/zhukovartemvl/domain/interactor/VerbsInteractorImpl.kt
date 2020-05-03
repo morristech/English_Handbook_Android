@@ -9,11 +9,24 @@ class VerbsInteractorImpl(private val repository: DatabaseRepository) : VerbsInt
 
     private val fullVerbsKey = "IrregularVerbsFull"
 
+    private var verbs: List<IrregularVerbItem> = listOf()
+
+    private enum class SortType { Alphabet, Type, Rate }
+
     override fun getVerbs(key: String): List<IrregularVerbItem> {
-        return if (key == fullVerbsKey)
+        verbs = if (key == fullVerbsKey)
             repository.getVerbs()
         else
             repository.getVerbs(key)
+        return verbs
+    }
+
+    override fun sort(): List<IrregularVerbItem> {
+        TODO("Not yet implemented")
+    }
+
+    override fun getSortTypeText(): String {
+        TODO("Not yet implemented")
     }
 
 }

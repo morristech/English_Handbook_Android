@@ -13,8 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        android:orientation="vertical"
-        tools:context=".presentation.ui.about.AboutFragment">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,6 +23,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
                 android:text="@string/app_name"
                 android:textAlignment="center"
                 android:textSize="24sp" />
@@ -36,16 +36,6 @@
                 android:textAlignment="center"
                 android:textSize="16sp"
                 tools:text="@string/version" />
-
-            <TextView
-                android:id="@+id/dbVersion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@{viewModel.databaseVersion}"
-                android:textAlignment="center"
-                android:textSize="16sp"
-                tools:text="@string/database_version" />
-
 
             <TextView
                 android:layout_width="match_parent"
@@ -61,18 +51,10 @@
                 style="@style/LinkText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="@{()->viewModel.onEmailClick()}"
+                android:onClick="@{()->viewModel.onEmailClick(context)}"
                 android:text="@string/email"
                 android:textAlignment="center" />
 
-            <TextView
-                android:id="@+id/reviewTextClick"
-                style="@style/LinkText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="@{()->viewModel.onReviewClick()}"
-                android:text="@string/review"
-                android:textAlignment="center" />
         </LinearLayout>
 
     </ScrollView>

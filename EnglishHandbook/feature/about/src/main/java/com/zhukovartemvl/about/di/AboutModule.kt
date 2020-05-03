@@ -7,6 +7,6 @@ import org.koin.dsl.module
 
 val featureAboutModule = module {
 
-    viewModel { AboutViewModel() }
+    viewModel { AboutViewModel(get()) }
 
 }

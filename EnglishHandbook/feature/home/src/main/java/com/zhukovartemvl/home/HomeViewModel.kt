@@ -31,9 +31,17 @@ class HomeViewModel(
     val loadingStatus = MutableLiveData<String>()
 
     init {
+        loadDatabase(context)
+    }
+
+    fun loadDatabase(context: Context) {
         loadingStatus.set(newValue = context.getString(R.string.database_load))
         GlobalScope.launch(Dispatchers.IO) {
             val result = databaseInteractor.init(context)
+
+            if (result) {
+                databaseInteractor.initAndCheckUpdate(context)
+            }
 
             withContext(Dispatchers.Main) {
                 if (result) {
@@ -41,7 +49,7 @@ class HomeViewModel(
                     initCategories()
                 } else {
                     state.set(newValue = HomeState.DatabaseLoadingErrorState)
-                    loadingStatus.set(newValue = "Ошибка")
+                    loadingStatus.set(newValue = "Ошибка загрузки данных.\nПроверьте подключение интернета.")
                 }
             }
 

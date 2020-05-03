@@ -2,12 +2,12 @@ package com.zhukovartemvl.data.repository
 
 import android.content.Context
 import com.zhukovartemvl.data.converter.*
-import com.zhukovartemvl.data.db.DatabaseLoaderImpl
+import com.zhukovartemvl.data.db.DatabaseLoader
 import com.zhukovartemvl.shared.model.*
 import com.zhukovartemvl.shared.repository.DatabaseRepository
 
 
-class DatabaseRepositoryImpl(private val database: DatabaseLoaderImpl) : DatabaseRepository {
+class DatabaseRepositoryImpl(private val database: DatabaseLoader) : DatabaseRepository {
 
     override fun initDatabase(context: Context): Boolean {
         return database.init(context)

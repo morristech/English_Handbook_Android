@@ -19,14 +19,12 @@ class VerbsViewModel(private val verbsInteractor: VerbsInteractor) : ViewModel()
 
     private var isInitialized = false
 
-    private var verbs: List<IrregularVerbItem> = listOf()
-
     fun init(key: String, title: String) {
         if (!isInitialized) {
             isInitialized = true
 
             GlobalScope.launch(Dispatchers.IO) {
-                verbs = verbsInteractor.getVerbs(key)
+                val verbs = verbsInteractor.getVerbs(key)
 
                 withContext(Dispatchers.Main) {
                     adapter.updateItems(verbs)
@@ -37,5 +35,8 @@ class VerbsViewModel(private val verbsInteractor: VerbsInteractor) : ViewModel()
         description.set(newValue = title)
     }
 
+    fun sortVerbs() {
+
+    }
 
 }

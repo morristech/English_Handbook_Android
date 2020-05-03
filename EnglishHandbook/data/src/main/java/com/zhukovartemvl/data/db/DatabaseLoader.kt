@@ -10,7 +10,7 @@ import java.lang.Exception
 import java.net.URL
 
 
-class DatabaseLoaderImpl(private val dbInfo: DatabaseInfo) {
+class DatabaseLoader(private val dbInfo: DatabaseInfo) {
 
     lateinit var instance: AppDatabase
         private set

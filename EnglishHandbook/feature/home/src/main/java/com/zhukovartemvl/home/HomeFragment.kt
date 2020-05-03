@@ -38,14 +38,18 @@ class HomeFragment : Fragment(), IOnBackPressed {
             when (state) {
                 is HomeState.DefaultState -> {
                     categoryList.visibility = View.VISIBLE
-                    databaseUpdateState.visibility = View.GONE
+                    databaseLoadingState.visibility = View.GONE
+                    databaseErrorState.visibility = View.GONE
                 }
                 is HomeState.LoadingDatabaseState -> {
-                    databaseUpdateState.visibility = View.VISIBLE
                     categoryList.visibility = View.GONE
+                    databaseLoadingState.visibility = View.VISIBLE
+                    databaseErrorState.visibility = View.GONE
                 }
                 is HomeState.DatabaseLoadingErrorState -> {
-
+                    categoryList.visibility = View.GONE
+                    databaseLoadingState.visibility = View.GONE
+                    databaseErrorState.visibility = View.VISIBLE
                 }
             }
         })

@@ -16,7 +16,7 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/databaseUpdateState"
+            android:id="@+id/databaseLoadingState"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
@@ -31,6 +31,32 @@
                 android:layout_height="wrap_content"
                 android:text="@{viewModel.loadingStatus}"
                 android:textSize="24sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/databaseErrorState"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_error" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.loadingStatus}"
+                android:textSize="24sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{()->viewModel.loadDatabase(context)}"
+                android:text="@string/try_load_database" />
 
         </LinearLayout>
 

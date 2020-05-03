@@ -10,8 +10,7 @@
     <string name="feedback">Обратная связь: </string>
     <string name="review"><u>Оставить отзыв</u></string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="try_load_database">Попробовать еще раз</string>
 
     <string name="bug_report">Сообщить об ошибке</string>
     <string name="share">Поделиться приложением</string>
@@ -20,6 +19,9 @@
     <string name="update">Обновить</string>
     <string name="version">Версия</string>
 
+    <string name="email_subject">Вопросы и предложения</string>
+    <string name="email_text">Ваши пожелания, предложения и впечатления</string>
+    <string name="email_popup_title">Выберите почтовый клиент</string>
 
     <string name="database_load">Загрузка базы данных</string>
     <string name="database_update">Обновление базы данных</string>
