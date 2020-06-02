@@ -5,11 +5,10 @@ apply plugin: 'kotlin-kapt'
 
 
 android {
-    dataBinding {
-        enabled true
+    buildFeatures {
+        dataBinding true
     }
 }
-
 dependencies {
     implementation project(':shared:core-ui')
     implementation project(':shared:core')
